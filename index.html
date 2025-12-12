@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commis 1 Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 1%;
+        }
+        
+        .container {
+            max-width: 100%;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 12px 1%;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .header p {
+            font-size: 11px;
+            opacity: 0.9;
+            margin-top: 3px;
+        }
+        
+        .tabs {
+            display: flex;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+            overflow-x: auto;
+        }
+        
+        .tab {
+            flex: 1;
+            padding: 10px 5px;
+            text-align: center;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 12px;
+            color: #495057;
+            transition: all 0.3s;
+            min-width: 80px;
+        }
+        
+        .tab.active {
+            background: white;
+            color: #f5576c;
+            font-weight: 600;
+            border-bottom: 3px solid #f5576c;
+        }
+        
+        .content {
+            padding: 1%;
+            display: none;
+        }
+        
+        .content.active {
+            display: block;
+        }
+        
+        .section {
+            margin-bottom: 12px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 1%;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        
+        .section-body {
+            padding: 1%;
+            display: none;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+        
+        .section-body.open {
+            display: block;
+        }
+        
+        .checklist-item {
+            padding: 8px 1%;
+            margin: 4px 0;
+            background: white;
+            border-radius: 4px;
+            border-left: 3px solid #667eea;
+            font-size: 12px;
+        }
+        
+        .checklist-item input[type="checkbox"] {
+            margin-right: 8px;
+        }
+        
+        .tip {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 8px 1%;
+            margin: 8px 0;
+            border-radius: 4px;
+            font-size: 11px;
+        }
+        
+        .important {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 8px 1%;
+            margin: 8px 0;
+            border-radius: 4px;
+            font-size: 11px;
+        }
+        
+        ul {
+            margin-left: 15px;
+        }
+        
+        li {
+            margin: 4px 0;
+            font-size: 12px;
+        }
+        
+        .arrow {
+            transition: transform 0.3s;
+        }
+        
+        .arrow.rotate {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🍳 Filipino Commis 1 Guide 🇵🇭</h1>
+            <p>Your Essential Kitchen Career Guide</p>
+        </div>
+        
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('basics')">Basics</button>
+            <button class="tab" onclick="showTab('skills')">Skills</button>
+            <button class="tab" onclick="showTab('recipes')">Recipes</button>
+            <button class="tab" onclick="showTab('safety')">Safety</button>
+            <button class="tab" onclick="showTab('career')">Career</button>
+        </div>
+        
+        <div id="basics" class="content active">
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>Ano ang Commis 1?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-body">
+                    <p>Ang Commis 1 ay isang mid-level position sa kusina na may mas maraming responsibilidad kaysa sa Commis 2 o 3. Ikaw ay:</p>
+                    <ul>
+                        <li>Tumutulong sa Demi Chef o Chef de Partie</li>
+                        <li>Gumagawa ng mas komplikadong dishes</li>
+                        <li>Nag-supervise sa junior commis</li>
+                        <li>Nag-prepare ng ingredients at stations</li>
+                        <li>May karanasan na ng 1-2 years sa kusina</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>Pangunahing Tungkulin</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-body">
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task1">
+                        <label for="task1">Mag-mise en place bago mag-service</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task2">
+                        <label for="task2">Linisin at ayusin ang workstation</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task3">
+                        <label for="task3">Mag-prepare ng stocks at sauces</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task4">
+                        <label for="task4">Turuan ang bagong commis</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task5">
+                        <label for="task5">I-check ang quality ng ingredients</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="task6">
+                        <label for="task6">Sumunod sa food safety standards</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>Hierarchy sa Kusina</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-body">
+                    <p><strong>1. Executive Chef</strong> - Head ng buong kitchen</p>
+                    <p><strong>2. Sous Chef</strong> - Assistant ng Executive Chef</p>
+                    <p><strong>3. Chef de Partie</strong> - Station head (saucier, poissonnier, etc.)</p>
+                    <p><strong>4. Demi Chef</strong> - Assistant station head</p>
+                    <p><strong>5. Commis 1</strong> - ← Ikaw dito! Senior junior cook</p>
+                    <p><strong>6. Commis 2</strong> - Junior cook</p>
+                    <p><strong>7. Commis 3</strong> - Entry level cook</p>
+                    <p><strong>8. Kitchen Helper</strong> - Support staff</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>Kitchen Stations</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-body">
+                    <p><strong>Saucier</strong> - Sauces, sautéed items, stews</p>
+                    <p><strong>Poissonnier</strong> - Fish and seafood dishes</p>
+                    <p><strong>Rôtisseur</strong> - Roasted and braised meats</p>
+                    <p><strong>Grillardin</strong> - Grilled items</p>
+                    <p><strong>Friturier</strong> - Fried items</p>
+                    <p><strong>Entremetier</strong> - Vegetables, soups, starches</p>
+                    <p><strong>Garde Manger</strong> - Cold preparations, salads</p>
+                    <p><strong>Pâtissier</strong> - Pastries and desserts</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>Kitchen Terminology</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-body">
+                    <p><strong>Mise en place</strong> - Everything in its place (prep)</p>
+                    <p><strong>À la carte</strong> - Cooked to order</p>
+                    <p><strong>Brigade</strong> - Kitchen team</p>
+                    <p><strong>Covers</strong> - Number of guests served</p>
+                    <p><strong>Fire/Pick up</strong> - Start cooking an order</p>
+                    <p><strong>In the weeds</strong> - Overwhelmed with orders</p>
+                    <p><strong>86'd</strong> - Out of stock item</p>
+                    <p><strong>On the fly</strong> - Urgent order needed ASAP</p>
+                    <p><strong>All day</strong> - Total count of orders needed</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="skills" class="content">
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>Knife Skills</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-body">
+                    <p><strong>Dapat mo nang mastery:</strong></p>
+                    <ul>
+                        <li><strong>Julienne</strong> - 1/8" x 1/8" x 2" strips</li>
+                        <li><strong>Brunoise</strong> - 1/8" cubes</li>
+                        <li><strong>Small Dice</strong> - 1/4" cubes</li>
+                        <li><strong>Medium Dice</strong> - 1/2" cubes</li>
+                        <li><strong>Large Dice</strong> - 3/4" cubes</li>
+                        <li><strong>Chiffonade</strong> - Thin ribbon cuts para sa herbs</li>
+                        <li><strong>Paysanne</strong> - Thin, flat shapes</li>
+                    </ul>
+                    <div class="tip">
+                        <strong>💡 Tip:</strong> Practice 15 minutes daily sa diced onions. Consistency is key!
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>Cooking Methods</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-body">
+                    <p><strong>Dry Heat:</strong></p>
+                    <ul>
+                        <li>Grilling - High heat, direct flame</li>
+                        <li>Roasting - Oven, 300°F+</li>
+                        <li>Sautéing - Hot pan, small amount of fat</li>
+                        <li>Pan-frying - Moderate oil</li>
+                        <li>Deep-frying - Fully submerged sa oil</li>
+                    </ul>
+                    <p><strong>Moist Heat:</strong></p>
+                    <ul>
+                        <li>Boiling - 212°F (100°C)</li>
+                        <li>Simmering - 185-200°F</li>
+                        <li>Poaching - 160-180°F</li>
+                        <li>Steaming - Steam lang, hindi tubig</li>
+                        <li>Braising - Combination method</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>Mother Sauces</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-body">
+                    <p><strong>1. Béchamel</strong> - White sauce (milk + roux)</p>
+                    <p><strong>2. Velouté</strong> - Light stock + roux</p>
+                    <p><strong>3. Espagnole</strong> - Brown sauce (brown stock + brown roux)</p>
+                    <p><strong>4. Hollandaise</strong> - Emulsion ng butter at egg yolks</p>
+                    <p><strong>5. Tomato</strong> - Tomato-based sauce</p>
+                    <div class="important">
+                        <strong>⚠️ Important:</strong> Memorize ang ratios at dapat smooth ang sauces mo!
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>Vegetable Cuts Standards</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-body">
+                    <p><strong>Jardinière</strong> - 1/8" x 1/8" x 1" batons</p>
+                    <p><strong>Bâtonnet</strong> - 1/4" x 1/4" x 2-2.5" sticks</p>
+                    <p><strong>Pont-Neuf</strong> - 1/2" x 1/2" x 2-3" (thick fries)</p>
+                    <p><strong>Macédoine</strong> - 1/4" cubes</p>
+                    <p><strong>Parmentier</strong> - 1/2" cubes</p>
+                    <p><strong>Carré</strong> - 1" cubes</p>
+                    <p><strong>Émincé</strong> - Very thin slices</p>
+                    <p><strong>Rondelle</strong> - Round slices</p>
+                    <div class="tip">
+                        <strong>💡 Tip:</strong> Uniform cuts = even cooking. Practice daily!
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>Stock Making Principles</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-body">
+                    <p><strong>White Stock:</strong> Blanched bones, cold water start</p>
+                    <p><strong>Brown Stock:</strong> Roasted bones (400°F oven)</p>
+                    <p><strong>Fish Stock:</strong> 45 mins max (bitter if longer)</p>
+                    <p><strong>Vegetable Stock:</strong> 1 hour simmer</p>
+                    <p><strong>Ratio:</strong> 1 lb bones : 1 qt water</p>
+                    <p><strong>Mirepoix ratio:</strong> 2:1:1 (onion:celery:carrot)</p>
+                    <div class="important">
+                        <strong>⚠️ Remember:</strong> Never boil! Always simmer. Skim regularly.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>Plating Techniques</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-body">
+                    <p><strong>Clock Method:</strong> Protein at 6 o'clock, starch at 2, veg at 10</p>
+                    <p><strong>Height:</strong> Build up, not flat</p>
+                    <p><strong>Odd Numbers:</strong> 3 or 5 pieces looks better</p>
+                    <p><strong>White Space:</strong> Don't overcrowd the plate</p>
+                    <p><strong>Clean Rims:</strong> Wipe edges before service</p>
+                    <p><strong>Sauce:</strong> Under or beside, never on top</p>
+                    <p><strong>Garnish:</strong> Must be edible and relevant</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="recipes" class="content">
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>Basic Chicken Stock</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-body">
+                    <p><strong>Ingredients:</strong></p>
+                    <ul>
+                        <li>5 lbs chicken bones</li>
+                        <li>1 gallon cold water</li>
+                        <li>2 onions, roughly chopped</li>
+                        <li>2 carrots, roughly chopped</li>
+                        <li>2 celery stalks</li>
+                        <li>Bay leaves, peppercorns, thyme</li>
+                    </ul>
+                    <p><strong>Instructions:</strong></p>
+                    <p>1. Blanch bones (3-5 min boil, rinse)</p>
+                    <p>2. Cold water start, bring to simmer</p>
+                    <p>3. Skim impurities regularly</p>
+                    <p>4. Add mirepoix after 2 hours</p>
+                    <p>5. Simmer total 4-6 hours</p>
+                    <p>6. Strain through cheesecloth</p>
+                    <div class="tip">
+                        <strong>💡 Tip:</strong> Never boil! Laging gentle simmer lang para clear ang stock.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>Adobong Manok (Professional)</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-body">
+                    <p><strong>Ingredients (10 servings):</strong></p>
+                    <ul>
+                        <li>3 kg chicken, portioned</li>
+                        <li>200ml soy sauce</li>
+                        <li>150ml vinegar</li>
+                        <li>20 cloves garlic, crushed</li>
+                        <li>10 bay leaves</li>
+                        <li>20g whole peppercorns</li>
+                        <li>100ml vegetable oil</li>
+                    </ul>
+                    <p><strong>Method:</strong></p>
+                    <p>1. Marinate chicken sa soy sauce, vinegar, garlic (2 hrs)</p>
+                    <p>2. Sear chicken until golden</p>
+                    <p>3. Add marinade, bay leaves, peppercorns</p>
+                    <p>4. Simmer 30-40 minutes</p>
+                    <p>5. Reduce sauce until thick</p>
+                    <p>6. Season to taste</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>Sinigang na Baboy (Restaurant Style)</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-body">
+                    <p><strong>Ingredients (8 servings):</strong></p>
+                    <ul>
+                        <li>2 kg pork belly, cubed</li>
+                        <li>2 onions, quartered</li>
+                        <li>3 tomatoes, quartered</li>
+                        <li>2 radish, sliced</li>
+                        <li>200g kangkong</li>
+                        <li>150g tamarind paste</li>
+                        <li>Fish sauce to taste</li>
+                    </ul>
+                    <p><strong>Method:</strong></p>
+                    <p>1. Boil pork until tender (1.5 hrs)</p>
+                    <p>2. Sauté onions and tomatoes separately</p>
+                    <p>3. Add to pork broth</p>
+                    <p>4. Add tamarind paste, adjust sourness</p>
+                    <p>5. Add vegetables in order of cooking time</p>
+                    <p>6. Season with fish sauce</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>Kare-Kare (Professional Recipe)</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-body">
+                    <p><strong>Ingredients (10 servings):</strong></p>
+                    <ul>
+                        <li>2 kg oxtail, cut into portions</li>
+                        <li>500g tripe, cleaned</li>
+                        <li>300g peanut butter</li>
+                        <li>100g ground toasted rice</li>
+                        <li>200g sitaw, cut 2"</li>
+                        <li>1 bundle pechay</li>
+                        <li>2 eggplants, sliced</li>
+                        <li>Bagoong alamang for serving</li>
+                    </ul>
+                    <p><strong>Method:</strong></p>
+                    <p>1. Boil oxtail and tripe until tender (2-3 hrs)</p>
+                    <p>2. Make peanut sauce: mix peanut butter with stock</p>
+                    <p>3. Add ground rice to thicken</p>
+                    <p>4. Add meat, simmer 30 mins</p>
+                    <p>5. Add vegetables, cook 5 mins</p>
+                    <p>6. Serve with bagoong on the side</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>Beef Kaldereta (Batch Cooking)</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-body">
+                    <p><strong>Ingredients (12 servings):</strong></p>
+                    <ul>
+                        <li>3 kg beef chuck, cubed</li>
+                        <li>500g tomato sauce</li>
+                        <li>200g liver spread</li>
+                        <li>4 potatoes, cubed</li>
+                        <li>3 carrots, cubed</li>
+                        <li>2 bell peppers, strips</li>
+                        <li>150g green olives</li>
+                        <li>5 bay leaves</li>
+                    </ul>
+                    <p><strong>Method:</strong></p>
+                    <p>1. Sear beef in batches, set aside</p>
+                    <p>2. Sauté aromatics, add tomato sauce</p>
+                    <p>3. Add beef, braise 1.5 hours</p>
+                    <p>4. Add liver spread, potatoes, carrots</p>
+                    <p>5. Cook until vegetables tender</p>
+                    <p>6. Add bell peppers and olives last</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>Pancit Canton (Commercial Kitchen)</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-body">
+                    <p><strong>Ingredients (15 servings):</strong></p>
+                    <ul>
+                        <li>1 kg canton noodles</li>
+                        <li>500g chicken breast, sliced</li>
+                        <li>300g shrimp, peeled</li>
+                        <li>400g mixed vegetables (carrots, cabbage, baguio beans)</li>
+                        <li>200ml soy sauce</li>
+                        <li>100ml oyster sauce</li>
+                        <li>10 cloves garlic, minced</li>
+                    </ul>
+                    <p><strong>Method:</strong></p>
+                    <p>1. Par-cook noodles, drain well</p>
+                    <p>2. Stir-fry proteins separately</p>
+                    <p>3. Stir-fry vegetables crisp-tender</p>
+                    <p>4. Combine all, add noodles</p>
+                    <p>5. Season with soy sauce and oyster sauce</p>
+                    <p>6. Toss continuously, cook 3-5 mins</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>Classic Roux (All Types)</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-body">
+                    <p><strong>White Roux:</strong> Equal parts butter and flour, cook 2-3 mins (no color)</p>
+                    <p><strong>Blond Roux:</strong> Cook 5-7 mins until light tan</p>
+                    <p><strong>Brown Roux:</strong> Cook 15-20 mins until nutty brown</p>
+                    <p><strong>Ratio:</strong> 1 oz roux : 1 cup liquid (medium thickness)</p>
+                    <div class="tip">
+                        <strong>💡 Tip:</strong> Darker roux = less thickening power. Adjust accordingly!
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="safety" class="content">
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>Temperature Guidelines</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-body">
+                    <p><strong>Safe Internal Temperatures:</strong></p>
+                    <ul>
+                        <li>Poultry - 165°F (74°C)</li>
+                        <li>Ground meat - 160°F (71°C)</li>
+                        <li>Pork - 145°F (63°C)</li>
+                        <li>Beef steaks - 145°F (63°C)</li>
+                        <li>Fish - 145°F (63°C)</li>
+                        <li>Eggs - 160°F (71°C)</li>
+                    </ul>
+                    <div class="important">
+                        <strong>⚠️ Danger Zone:</strong> 40°F - 140°F (4°C - 60°C)<br>
+                        Bacteria multiply rapidly sa temperature range na ito!
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>Food Storage</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-body">
+                    <p><strong>Refrigerator Order (Top to Bottom):</strong></p>
+                    <p>1. Ready-to-eat foods</p>
+                    <p>2. Seafood</p>
+                    <p>3. Whole cuts of beef/pork</p>
+                    <p>4. Ground meats</p>
+                    <p>5. Poultry</p>
+                    <div class="tip">
+                        <strong>💡 Rule:</strong> Store raw meat below cooked food para hindi tumulo ang juices!
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>Personal Hygiene</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-body">
+                    <div class="checklist-item">
+                        <input type="checkbox" id="hygiene1">
+                        <label for="hygiene1">Hugasan ang kamay ng 20 seconds</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="hygiene2">
+                        <label for="hygiene2">Malinis na chef uniform</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="hygiene3">
+                        <label for="hygiene3">Hair net o chef hat</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="hygiene4">
+                        <label for="hygiene4">Walang jewelry (tanggalin lahat)</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="hygiene5">
+                        <label for="hygiene5">Clean, trimmed nails</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="hygiene6">
+                        <label for="hygiene6">Cover cuts with waterproof bandage</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>FIFO System</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-body">
+                    <p><strong>First In, First Out</strong> - Oldest stock muna gamitin</p>
+                    <p><strong>Dating Labels:</strong> Lahat ng containers may label at date</p>
+                    <p><strong>Storage Duration:</strong></p>
+                    <ul>
+                        <li>Raw meat: 1-2 days refrigerated</li>
+                        <li>Cooked food: 3-4 days refrigerated</li>
+                        <li>Fish: Use within 24 hours</li>
+                        <li>Vegetables: 3-7 days depending on type</li>
+                    </ul>
+                    <div class="tip">
+                        <strong>💡 Tip:</strong> Rotate stock daily! Old products in front, new sa back.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>Cross-Contamination Prevention</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-body">
+                    <p><strong>Color-Coded Cutting Boards:</strong></p>
+                    <p>🔴 Red - Raw meat</p>
+                    <p>🔵 Blue - Raw fish</p>
+                    <p>🟡 Yellow - Cooked meat</p>
+                    <p>🟢 Green - Fruits & vegetables</p>
+                    <p>⚪ White - Dairy & bakery</p>
+                    <p>🟤 Brown - Root vegetables</p>
+                    <div class="important">
+                        <strong>⚠️ Critical:</strong> Never use same board for raw and cooked without washing!
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>Cleaning & Sanitizing</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-body">
+                    <p><strong>3-Compartment Sink Method:</strong></p>
+                    <p>1. Wash - Hot soapy water (110°F min)</p>
+                    <p>2. Rinse - Clean hot water</p>
+                    <p>3. Sanitize - Chlorine or quaternary solution</p>
+                    <p><strong>Sanitizer Concentration:</strong></p>
+                    <p>• Chlorine: 50-100 ppm</p>
+                    <p>• Quaternary ammonia: 200 ppm</p>
+                    <p>• Contact time: 30 seconds minimum</p>
+                    <div class="tip">
+                        <strong>💡 Tip:</strong> Test sanitizer concentration with test strips!
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>Fire Safety in Kitchen</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-body">
+                    <p><strong>Types of Fire Extinguishers:</strong></p>
+                    <p><strong>Class K</strong> - For grease fires (most common sa kusina)</p>
+                    <p><strong>Class ABC</strong> - Multi-purpose</p>
+                    <p><strong>NEVER:</strong> Water sa grease fire!</p>
+                    <p><strong>For Small Grease Fire:</strong></p>
+                    <p>1. Turn off heat source</p>
+                    <p>2. Cover with metal lid or baking sheet</p>
+                    <p>3. Use Class K extinguisher if needed</p>
+                    <p>4. Never move the pan</p>
+                    <div class="important">
+                        <strong>⚠️ Emergency:</strong> Know where fire extinguishers and exits are!
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="career" class="content">
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>Paano Mag-advance?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-body">
+                    <p><strong>Para maging Demi Chef:</strong></p>
+                    <ul>
+                        <li>Master lahat ng stations</li>
+                        <li>Mag-train ng mga junior commis</li>
+                        <li>Consistent quality ng output</li>
+                        <li>Good leadership skills</li>
+                        <li>2-3 years experience bilang Commis 1</li>
+                    </ul>
+                    <div class="tip">
+                        <strong>💡 Tip:</strong> Magpakita ng initiative! Volunteer sa ibang stations para matuto ng mas marami.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>Skills to Develop</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-body">
+                    <p><strong>Technical Skills:</strong></p>
+                    <ul>
+                        <li>Speed and accuracy sa knife work</li>
+                        <li>Perfect timing sa multiple dishes</li>
+                        <li>Plating at presentation</li>
+                        <li>Sauce making at emulsions</li>
+                        <li>Butchery basics</li>
+                    </ul>
+                    <p><strong>Soft Skills:</strong></p>
+                    <ul>
+                        <li>Communication sa team</li>
+                        <li>Stress management</li>
+                        <li>Time management</li>
+                        <li>Mentoring abilities</li>
+                        <li>Problem solving</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>Expected Salary (PH)</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-body">
+                    <p><strong>Commis 1 Salary Range:</strong></p>
+                    <ul>
+                        <li>Small restaurants: ₱15,000 - ₱20,000/month</li>
+                        <li>Mid-range hotels: ₱20,000 - ₱28,000/month</li>
+                        <li>5-star hotels: ₱25,000 - ₱35,000/month</li>
+                        <li>Cruise ships: $800 - $1,200/month + benefits</li>
+                    </ul>
+                    <div class="tip">
+                        <strong>💡 Tip:</strong> Plus tips, meals, at benefits sa karamihan ng establishments!
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>Daily Reminders</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-body">
+                    <p>✅ Punctuality is key - dating ka lagi ng 15 mins</p>
+                    <p>✅ "Yes, Chef!" - laging respetuhin ang hierarchy</p>
+                    <p>✅ Clean as you go - malinis na station</p>
+                    <p>✅ Taste everything - quality control</p>
+                    <p>✅ Ask questions - mas mabuti magtanong kaysa magkamali</p>
+                    <p>✅ Stay humble - laging may matututunan</p>
+                    <p>✅ Take care of your knives - tools mo yan</p>
+                    <p>✅ Teamwork makes the dream work</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>Dealing with Pressure</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-body">
+                    <p><strong>During Rush Hours:</strong></p>
+                    <ul>
+                        <li>Stay calm - panic spreads sa team</li>
+                        <li>Communicate clearly - "Behind!" "Hot!"</li>
+                        <li>Prioritize orders - first in, first out</li>
+                        <li>Focus on your station only</li>
+                        <li>Deep breath when overwhelmed</li>
+                    </ul>
+                    <div class="tip">
+                        <strong>💡 Tip:</strong> Good mise en place = less stress during service!
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>Common Kitchen Mistakes</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-body">
+                    <p>❌ Not reading the entire recipe first</p>
+                    <p>❌ Overcrowding the pan</p>
+                    <p>❌ Not preheating equipment</p>
+                    <p>❌ Flipping food too often</p>
+                    <p>❌ Under-seasoning throughout cooking</p>
+                    <p>❌ Not tasting before serving</p>
+                    <p>❌ Ignoring carryover cooking</p>
+                    <p>❌ Using dull knives</p>
+                    <div class="important">
+                        <strong>⚠️ Learn from mistakes:</strong> Every chef has failed. Grow from it!
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>Kitchen Equipment Care</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-body">
+                    <p><strong>Knives:</strong></p>
+                    <ul>
+                        <li>Hand wash only, dry immediately</li>
+                        <li>Store in knife roll or magnetic strip</li>
+                        <li>Sharpen weekly, hone daily</li>
+                        <li>Never sa dishwasher!</li>
+                    </ul>
+                    <p><strong>Pans:</strong></p>
+                    <ul>
+                        <li>Let cool before washing</li>
+                        <li>Season cast iron regularly</li>
+                        <li>Avoid metal utensils sa non-stick</li>
+                    </ul>
+                    <p><strong>Cutting Boards:</strong></p>
+                    <ul>
+                        <li>Sanitize after each use</li>
+                        <li>Oil wooden boards monthly</li>
+                        <li>Replace when deeply scored</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>Working Abroad Opportunities</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-body">
+                    <p><strong>Popular Destinations for Filipino Chefs:</strong></p>
+                    <p><strong>Cruise Ships</strong> - $800-$1,500/month + room & board</p>
+                    <p><strong>Middle East</strong> - AED 2,000-4,000/month</p>
+                    <p><strong>Singapore</strong> - SGD 1,800-2,500/month</p>
+                    <p><strong>Japan</strong> - ¥180,000-250,000/month</p>
+                    <p><strong>Canada</strong> - CAD 2,500-3,500/month</p>
+                    <p><strong>Requirements:</strong></p>
+                    <ul>
+                        <li>NC II Certificate (TESDA)</li>
+                        <li>2+ years experience</li>
+                        <li>Good English communication</li>
+                        <li>Passport and clearances</li>
+                        <li>Health certificate</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(this)">
+                    <span>Professional Development</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-body">
+                    <p><strong>Certifications to Get:</strong></p>
+                    <ul>
+                        <li>TESDA NC II - Commercial Cooking</li>
+                        <li>TESDA NC III - Professional Cooking</li>
+                        <li>Food Safety Certificate</li>
+                        <li>Bartending License (bonus)</li>
+                    </ul>
+                    <p><strong>Skills to Learn:</strong></p>
+                    <ul>
+                        <li>Different cuisines (Italian, French, Japanese)</li>
+                        <li>Pastry basics</li>
+                        <li>Inventory management</li>
+                        <li>Cost control</li>
+                        <li>Menu planning</li>
+                    </ul>
+                    <div class="tip">
+                        <strong>💡 Tip:</strong> Free online courses sa YouTube and Coursera!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.content');
+            
+            tabs.forEach(tab => tab.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+            
+            event.target.classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+        }
+        
+        function toggleSection(header) {
+            const body = header.nextElementSibling;
+            const arrow = header.querySelector('.arrow');
+            
+            body.classList.toggle('open');
+            arrow.classList.toggle('rotate');
+        }
+    </script>
+</body>
+</html>
